@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-24",
+  "scope": "Cumulative-work estimate under short poll intervals",
+  "head": {
+    "commit": "bb4fd0c7e589858bbeef00ec89342216c1510671",
+    "path": "main/system.c",
+    "blob": "487c27d3419281bc90213d21e0880d81b566388b"
+  },
+  "release": {
+    "tag": "v2.15.4",
+    "commit": "d212a0f948cb3ffd90c7ca9572e9b2cf2d865d80",
+    "path": "main/system.c",
+    "blob": "5ef4c1d50087529faa9601432bc9af8711ef6556"
+  },
+  "candidate": {
+    "commit": "6dc1e9afd8cda9a60da06235cd025dac7aba6aa6",
+    "branch": "fix/cumulative-hashes-short-poll-intervals",
+    "production_files_changed": 1,
+    "additions": 1,
+    "deletions": 1
+  },
+  "method": "Extract complete SYSTEM_noinit_update function; compile with controlled clock, NVS stubs, and matching accessed field types.",
+  "limits": [
+    "Native replay, not a full ESP-IDF build or physical device test",
+    "Synthetic constant-rate timing traces; fleet prevalence unmeasured",
+    "Sampled-rate approximation remains; no physical hashrate increase claimed"
+  ],
+  "prior_art": [
+    {
+      "pr": 1555,
+      "topic": "Lifetime counters introduced"
+    },
+    {
+      "pr": 1988,
+      "topic": "Distinct omitted-zero rolling averages repair"
+    },
+    {
+      "pr": 2013,
+      "topic": "Known timing slot aliasing; not claimed new"
+    }
+  ],
+  "sanitizer": {
+    "address": "passed",
+    "undefined_behavior": "passed",
+    "leak_scan": "disabled because execution host restricts process inspection"
+  }
+}

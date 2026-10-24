@@ -1,0 +1,111 @@
+{
+  "source": "evidence/../esp-miner/main/system.c",
+  "source_sha256": "e5e3eebf246342f90c8ae51d6b722b16ac8e56adefb7642dc86397981aafb2c2",
+  "function_sha256": "39cb2432c8c4a7919649552815e4457b30c27cb9858b21ae8e5499e69b79fcd0",
+  "compiler": "cc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "flags": [
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pedantic"
+  ],
+  "cases": [
+    {
+      "case": "steady_one_second",
+      "elapsed_ms": 20000,
+      "expected_low": 20000000000000,
+      "actual_low": 20000000000000,
+      "expected_high": 0,
+      "actual_high": 0,
+      "expected_uptime": 120,
+      "actual_uptime": 120,
+      "nvs_writes": 0,
+      "persisted_low": 0,
+      "passed": true
+    },
+    {
+      "case": "alternating_999_1001_ms",
+      "elapsed_ms": 20000,
+      "expected_low": 20000000000000,
+      "actual_low": 20000000000000,
+      "expected_high": 0,
+      "actual_high": 0,
+      "expected_uptime": 120,
+      "actual_uptime": 120,
+      "nvs_writes": 0,
+      "persisted_low": 0,
+      "passed": true
+    },
+    {
+      "case": "repeated_500_ms",
+      "elapsed_ms": 20000,
+      "expected_low": 20000000000000,
+      "actual_low": 20000000000000,
+      "expected_high": 0,
+      "actual_high": 0,
+      "expected_uptime": 120,
+      "actual_uptime": 120,
+      "nvs_writes": 0,
+      "persisted_low": 0,
+      "passed": true
+    },
+    {
+      "case": "delayed_poll",
+      "elapsed_ms": 20000,
+      "expected_low": 20000000000000,
+      "actual_low": 20000000000000,
+      "expected_high": 0,
+      "actual_high": 0,
+      "expected_uptime": 120,
+      "actual_uptime": 120,
+      "nvs_writes": 0,
+      "persisted_low": 0,
+      "passed": true
+    },
+    {
+      "case": "zero_rate_then_resume",
+      "elapsed_ms": 20000,
+      "expected_low": 10000000000000,
+      "actual_low": 10000000000000,
+      "expected_high": 0,
+      "actual_high": 0,
+      "expected_uptime": 120,
+      "actual_uptime": 120,
+      "nvs_writes": 0,
+      "persisted_low": 0,
+      "passed": true
+    },
+    {
+      "case": "low_word_carry",
+      "elapsed_ms": 4000,
+      "expected_low": 2000000000000,
+      "actual_low": 2000000000000,
+      "expected_high": 8,
+      "actual_high": 8,
+      "expected_uptime": 104,
+      "actual_uptime": 104,
+      "nvs_writes": 0,
+      "persisted_low": 0,
+      "passed": true
+    },
+    {
+      "case": "hourly_persistence_with_jitter",
+      "elapsed_ms": 3600000,
+      "expected_low": 3600000000000000,
+      "actual_low": 3600000000000000,
+      "expected_high": 0,
+      "actual_high": 0,
+      "expected_uptime": 3700,
+      "actual_uptime": 3700,
+      "nvs_writes": 3,
+      "persisted_low": 3600000000000000,
+      "passed": true
+    }
+  ],
+  "passed": 7,
+  "failed": 0,
+  "returncode": 0,
+  "stderr": ""
+}
