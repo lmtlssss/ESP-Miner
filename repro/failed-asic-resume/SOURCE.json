@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/bitaxeorg/ESP-Miner",
+  "development_original": "bb4fd0c7e589858bbeef00ec89342216c1510671",
+  "release_original": "d212a0f948cb3ffd90c7ca9572e9b2cf2d865d80",
+  "release_tag": "v2.15.4",
+  "candidate": "development_original plus retry-resume.patch",
+  "scope": "retain paused state after an unsuccessful resume",
+  "scenario_names": ["normal resume", "transient first failure", "persistent failure", "pool outage", "hardware fault retained", "pause returns"],
+  "physical_validation": "pending"
+}

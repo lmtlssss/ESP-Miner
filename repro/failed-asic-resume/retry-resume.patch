@@ -1,0 +1,14 @@
+diff --git a/main/tasks/power_management_task.c b/main/tasks/power_management_task.c
+index 8d3e1b8..a8f45ad 100644
+--- a/main/tasks/power_management_task.c
++++ b/main/tasks/power_management_task.c
+@@ -147,8 +147,7 @@ void POWER_MANAGEMENT_task(void * pvParameters)
+             mining_stop(GLOBAL_STATE);
+             is_paused = true;
+         } else if (!wants_stop && is_paused) {
+-            mining_start(GLOBAL_STATE);
+-            is_paused = false;
++            is_paused = mining_start(GLOBAL_STATE) == 0;
+         }
+ 
+         // If we've paused or have a hardware fault, skip doing anything else

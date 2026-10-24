@@ -1,0 +1,212 @@
+[
+  {
+    "snapshot": "development-original",
+    "expected_behavior_observed": true,
+    "results": {
+      "ref": "working-tree",
+      "boundary": "complete production power task and helpers; controlled sensors, NVS, ASIC initialization and RTOS delays",
+      "scenarios": [
+        {
+          "scenario": 0,
+          "initialization_attempts": 1,
+          "asic_initialized": true,
+          "ordinary_voltage_writes_after_failure": 0,
+          "stop_commands": 1,
+          "delay_calls": 11,
+          "elapsed_ms": 4300,
+          "pass": true
+        },
+        {
+          "scenario": 1,
+          "initialization_attempts": 1,
+          "asic_initialized": false,
+          "ordinary_voltage_writes_after_failure": 1,
+          "stop_commands": 1,
+          "delay_calls": 11,
+          "elapsed_ms": 2300,
+          "pass": false
+        },
+        {
+          "scenario": 2,
+          "initialization_attempts": 1,
+          "asic_initialized": false,
+          "ordinary_voltage_writes_after_failure": 1,
+          "stop_commands": 1,
+          "delay_calls": 11,
+          "elapsed_ms": 2300,
+          "pass": false
+        },
+        {
+          "scenario": 3,
+          "initialization_attempts": 1,
+          "asic_initialized": false,
+          "ordinary_voltage_writes_after_failure": 1,
+          "stop_commands": 1,
+          "delay_calls": 11,
+          "elapsed_ms": 2300,
+          "pass": false
+        },
+        {
+          "scenario": 4,
+          "initialization_attempts": 0,
+          "asic_initialized": false,
+          "ordinary_voltage_writes_after_failure": 0,
+          "stop_commands": 1,
+          "delay_calls": 9,
+          "elapsed_ms": 1700,
+          "pass": true
+        },
+        {
+          "scenario": 5,
+          "initialization_attempts": 2,
+          "asic_initialized": true,
+          "ordinary_voltage_writes_after_failure": 1,
+          "stop_commands": 2,
+          "delay_calls": 15,
+          "elapsed_ms": 5500,
+          "pass": false
+        }
+      ]
+    }
+  },
+  {
+    "snapshot": "release-original",
+    "expected_behavior_observed": true,
+    "results": {
+      "ref": "working-tree",
+      "boundary": "complete production power task and helpers; controlled sensors, NVS, ASIC initialization and RTOS delays",
+      "scenarios": [
+        {
+          "scenario": 0,
+          "initialization_attempts": 1,
+          "asic_initialized": true,
+          "ordinary_voltage_writes_after_failure": 0,
+          "stop_commands": 1,
+          "delay_calls": 11,
+          "elapsed_ms": 4300,
+          "pass": true
+        },
+        {
+          "scenario": 1,
+          "initialization_attempts": 1,
+          "asic_initialized": false,
+          "ordinary_voltage_writes_after_failure": 1,
+          "stop_commands": 1,
+          "delay_calls": 11,
+          "elapsed_ms": 2300,
+          "pass": false
+        },
+        {
+          "scenario": 2,
+          "initialization_attempts": 1,
+          "asic_initialized": false,
+          "ordinary_voltage_writes_after_failure": 1,
+          "stop_commands": 1,
+          "delay_calls": 11,
+          "elapsed_ms": 2300,
+          "pass": false
+        },
+        {
+          "scenario": 3,
+          "initialization_attempts": 1,
+          "asic_initialized": false,
+          "ordinary_voltage_writes_after_failure": 1,
+          "stop_commands": 1,
+          "delay_calls": 11,
+          "elapsed_ms": 2300,
+          "pass": false
+        },
+        {
+          "scenario": 4,
+          "initialization_attempts": 0,
+          "asic_initialized": false,
+          "ordinary_voltage_writes_after_failure": 0,
+          "stop_commands": 1,
+          "delay_calls": 9,
+          "elapsed_ms": 1700,
+          "pass": true
+        },
+        {
+          "scenario": 5,
+          "initialization_attempts": 2,
+          "asic_initialized": true,
+          "ordinary_voltage_writes_after_failure": 1,
+          "stop_commands": 2,
+          "delay_calls": 15,
+          "elapsed_ms": 5500,
+          "pass": false
+        }
+      ]
+    }
+  },
+  {
+    "snapshot": "development-candidate",
+    "expected_behavior_observed": true,
+    "results": {
+      "ref": "working-tree",
+      "boundary": "complete production power task and helpers; controlled sensors, NVS, ASIC initialization and RTOS delays",
+      "scenarios": [
+        {
+          "scenario": 0,
+          "initialization_attempts": 1,
+          "asic_initialized": true,
+          "ordinary_voltage_writes_after_failure": 0,
+          "stop_commands": 1,
+          "delay_calls": 11,
+          "elapsed_ms": 4300,
+          "pass": true
+        },
+        {
+          "scenario": 1,
+          "initialization_attempts": 2,
+          "asic_initialized": true,
+          "ordinary_voltage_writes_after_failure": 0,
+          "stop_commands": 1,
+          "delay_calls": 13,
+          "elapsed_ms": 4900,
+          "pass": true
+        },
+        {
+          "scenario": 2,
+          "initialization_attempts": 5,
+          "asic_initialized": false,
+          "ordinary_voltage_writes_after_failure": 0,
+          "stop_commands": 1,
+          "delay_calls": 19,
+          "elapsed_ms": 4700,
+          "pass": true
+        },
+        {
+          "scenario": 3,
+          "initialization_attempts": 2,
+          "asic_initialized": true,
+          "ordinary_voltage_writes_after_failure": 0,
+          "stop_commands": 1,
+          "delay_calls": 13,
+          "elapsed_ms": 4900,
+          "pass": true
+        },
+        {
+          "scenario": 4,
+          "initialization_attempts": 0,
+          "asic_initialized": false,
+          "ordinary_voltage_writes_after_failure": 0,
+          "stop_commands": 1,
+          "delay_calls": 9,
+          "elapsed_ms": 1700,
+          "pass": true
+        },
+        {
+          "scenario": 5,
+          "initialization_attempts": 2,
+          "asic_initialized": true,
+          "ordinary_voltage_writes_after_failure": 0,
+          "stop_commands": 1,
+          "delay_calls": 13,
+          "elapsed_ms": 4900,
+          "pass": true
+        }
+      ]
+    }
+  }
+]
