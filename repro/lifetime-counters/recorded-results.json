@@ -1,0 +1,352 @@
+[
+  {
+    "snapshot": "development-original",
+    "script": "replay.py",
+    "expected_behavior_observed": true,
+    "results": {
+      "source": "source/development-original",
+      "ref": "working-tree",
+      "boundary": "actual updater/getters; controlled monotonic clock and NVS",
+      "scenarios": [
+        {
+          "scenario": "regular_1000_ms",
+          "elapsed_ms": 60000,
+          "observed_hashes": 60000000000000,
+          "expected_hashes": 60000000000000,
+          "uptime_seconds": 60,
+          "expected_uptime_seconds": 60,
+          "nvs_writes": 0,
+          "pass": true
+        },
+        {
+          "scenario": "alternating_999_1001_ms",
+          "elapsed_ms": 60000,
+          "observed_hashes": 30030000000000,
+          "expected_hashes": 60000000000000,
+          "uptime_seconds": 60,
+          "expected_uptime_seconds": 60,
+          "nvs_writes": 0,
+          "pass": false
+        },
+        {
+          "scenario": "regular_900_ms",
+          "elapsed_ms": 54000,
+          "observed_hashes": 0,
+          "expected_hashes": 54000000000000,
+          "uptime_seconds": 0,
+          "expected_uptime_seconds": 54,
+          "nvs_writes": 0,
+          "pass": false
+        },
+        {
+          "scenario": "alternating_900_1100_ms",
+          "elapsed_ms": 60000,
+          "observed_hashes": 33000000000000,
+          "expected_hashes": 60000000000000,
+          "uptime_seconds": 60,
+          "expected_uptime_seconds": 60,
+          "nvs_writes": 0,
+          "pass": false
+        },
+        {
+          "scenario": "zero_rate",
+          "elapsed_ms": 60000,
+          "observed_hashes": 0,
+          "expected_hashes": 0,
+          "uptime_seconds": 60,
+          "expected_uptime_seconds": 60,
+          "nvs_writes": 0,
+          "pass": true
+        },
+        {
+          "scenario": "hourly_persistence",
+          "elapsed_ms": 3600000,
+          "observed_hashes": 1801800000000000,
+          "expected_hashes": 3600000000000000,
+          "uptime_seconds": 3600,
+          "expected_uptime_seconds": 3600,
+          "nvs_writes": 3,
+          "pass": false
+        },
+        {
+          "scenario": "low_counter_carry",
+          "elapsed_ms": 1000,
+          "observed_hashes": 1000000000000,
+          "expected_hashes": 1000000000000,
+          "uptime_seconds": 1,
+          "expected_uptime_seconds": 1,
+          "nvs_writes": 0,
+          "pass": true
+        }
+      ]
+    }
+  },
+  {
+    "snapshot": "release-original",
+    "script": "replay.py",
+    "expected_behavior_observed": true,
+    "results": {
+      "source": "source/release-original",
+      "ref": "working-tree",
+      "boundary": "actual updater/getters; controlled monotonic clock and NVS",
+      "scenarios": [
+        {
+          "scenario": "regular_1000_ms",
+          "elapsed_ms": 60000,
+          "observed_hashes": 60000000000000,
+          "expected_hashes": 60000000000000,
+          "uptime_seconds": 60,
+          "expected_uptime_seconds": 60,
+          "nvs_writes": 0,
+          "pass": true
+        },
+        {
+          "scenario": "alternating_999_1001_ms",
+          "elapsed_ms": 60000,
+          "observed_hashes": 30030000000000,
+          "expected_hashes": 60000000000000,
+          "uptime_seconds": 60,
+          "expected_uptime_seconds": 60,
+          "nvs_writes": 0,
+          "pass": false
+        },
+        {
+          "scenario": "regular_900_ms",
+          "elapsed_ms": 54000,
+          "observed_hashes": 0,
+          "expected_hashes": 54000000000000,
+          "uptime_seconds": 0,
+          "expected_uptime_seconds": 54,
+          "nvs_writes": 0,
+          "pass": false
+        },
+        {
+          "scenario": "alternating_900_1100_ms",
+          "elapsed_ms": 60000,
+          "observed_hashes": 33000000000000,
+          "expected_hashes": 60000000000000,
+          "uptime_seconds": 60,
+          "expected_uptime_seconds": 60,
+          "nvs_writes": 0,
+          "pass": false
+        },
+        {
+          "scenario": "zero_rate",
+          "elapsed_ms": 60000,
+          "observed_hashes": 0,
+          "expected_hashes": 0,
+          "uptime_seconds": 60,
+          "expected_uptime_seconds": 60,
+          "nvs_writes": 0,
+          "pass": true
+        },
+        {
+          "scenario": "hourly_persistence",
+          "elapsed_ms": 3600000,
+          "observed_hashes": 1801800000000000,
+          "expected_hashes": 3600000000000000,
+          "uptime_seconds": 3600,
+          "expected_uptime_seconds": 3600,
+          "nvs_writes": 3,
+          "pass": false
+        },
+        {
+          "scenario": "low_counter_carry",
+          "elapsed_ms": 1000,
+          "observed_hashes": 1000000000000,
+          "expected_hashes": 1000000000000,
+          "uptime_seconds": 1,
+          "expected_uptime_seconds": 1,
+          "nvs_writes": 0,
+          "pass": true
+        }
+      ]
+    }
+  },
+  {
+    "snapshot": "development-candidate",
+    "script": "replay.py",
+    "expected_behavior_observed": true,
+    "results": {
+      "source": "source/development-candidate",
+      "ref": "working-tree",
+      "boundary": "actual updater/getters; controlled monotonic clock and NVS",
+      "scenarios": [
+        {
+          "scenario": "regular_1000_ms",
+          "elapsed_ms": 60000,
+          "observed_hashes": 60000000000000,
+          "expected_hashes": 60000000000000,
+          "uptime_seconds": 60,
+          "expected_uptime_seconds": 60,
+          "nvs_writes": 0,
+          "pass": true
+        },
+        {
+          "scenario": "alternating_999_1001_ms",
+          "elapsed_ms": 60000,
+          "observed_hashes": 60000000000000,
+          "expected_hashes": 60000000000000,
+          "uptime_seconds": 60,
+          "expected_uptime_seconds": 60,
+          "nvs_writes": 0,
+          "pass": true
+        },
+        {
+          "scenario": "regular_900_ms",
+          "elapsed_ms": 54000,
+          "observed_hashes": 54000000000000,
+          "expected_hashes": 54000000000000,
+          "uptime_seconds": 54,
+          "expected_uptime_seconds": 54,
+          "nvs_writes": 0,
+          "pass": true
+        },
+        {
+          "scenario": "alternating_900_1100_ms",
+          "elapsed_ms": 60000,
+          "observed_hashes": 60000000000000,
+          "expected_hashes": 60000000000000,
+          "uptime_seconds": 60,
+          "expected_uptime_seconds": 60,
+          "nvs_writes": 0,
+          "pass": true
+        },
+        {
+          "scenario": "zero_rate",
+          "elapsed_ms": 60000,
+          "observed_hashes": 0,
+          "expected_hashes": 0,
+          "uptime_seconds": 60,
+          "expected_uptime_seconds": 60,
+          "nvs_writes": 0,
+          "pass": true
+        },
+        {
+          "scenario": "hourly_persistence",
+          "elapsed_ms": 3600000,
+          "observed_hashes": 3600000000000000,
+          "expected_hashes": 3600000000000000,
+          "uptime_seconds": 3600,
+          "expected_uptime_seconds": 3600,
+          "nvs_writes": 3,
+          "pass": true
+        },
+        {
+          "scenario": "low_counter_carry",
+          "elapsed_ms": 1000,
+          "observed_hashes": 1000000000000,
+          "expected_hashes": 1000000000000,
+          "uptime_seconds": 1,
+          "expected_uptime_seconds": 1,
+          "nvs_writes": 0,
+          "pass": true
+        }
+      ]
+    }
+  },
+  {
+    "snapshot": "development-original",
+    "script": "replay_monitor.py",
+    "expected_behavior_observed": true,
+    "results": {
+      "source": "source/development-original",
+      "ref": "working-tree",
+      "boundary": "complete production monitor task plus unchanged counter updater; controlled ASIC reads, RTOS wake times and NVS",
+      "scenarios": [
+        {
+          "task_polls": 61,
+          "jitter_ms": 0,
+          "rate_ghs": 1000,
+          "elapsed_ms": 60000,
+          "pending_ms": 0,
+          "observed_hashes": 60000000000000,
+          "expected_committed_hashes": 60000000000000,
+          "pass": true
+        },
+        {
+          "task_polls": 61,
+          "jitter_ms": 1,
+          "rate_ghs": 1000,
+          "elapsed_ms": 60000,
+          "pending_ms": 0,
+          "observed_hashes": 30030000000000,
+          "expected_committed_hashes": 60000000000000,
+          "pass": false
+        },
+        {
+          "task_polls": 61,
+          "jitter_ms": 10,
+          "rate_ghs": 1000,
+          "elapsed_ms": 60000,
+          "pending_ms": 0,
+          "observed_hashes": 30300000000000,
+          "expected_committed_hashes": 60000000000000,
+          "pass": false
+        },
+        {
+          "task_polls": 61,
+          "jitter_ms": 1,
+          "rate_ghs": 0,
+          "elapsed_ms": 60000,
+          "pending_ms": 0,
+          "observed_hashes": 0,
+          "expected_committed_hashes": 0,
+          "pass": true
+        }
+      ]
+    }
+  },
+  {
+    "snapshot": "development-candidate",
+    "script": "replay_monitor.py",
+    "expected_behavior_observed": true,
+    "results": {
+      "source": "source/development-candidate",
+      "ref": "working-tree",
+      "boundary": "complete production monitor task plus unchanged counter updater; controlled ASIC reads, RTOS wake times and NVS",
+      "scenarios": [
+        {
+          "task_polls": 61,
+          "jitter_ms": 0,
+          "rate_ghs": 1000,
+          "elapsed_ms": 60000,
+          "pending_ms": 0,
+          "observed_hashes": 60000000000000,
+          "expected_committed_hashes": 60000000000000,
+          "pass": true
+        },
+        {
+          "task_polls": 61,
+          "jitter_ms": 1,
+          "rate_ghs": 1000,
+          "elapsed_ms": 60000,
+          "pending_ms": 999,
+          "observed_hashes": 59001000000000,
+          "expected_committed_hashes": 59001000000000,
+          "pass": true
+        },
+        {
+          "task_polls": 61,
+          "jitter_ms": 10,
+          "rate_ghs": 1000,
+          "elapsed_ms": 60000,
+          "pending_ms": 990,
+          "observed_hashes": 59010000000000,
+          "expected_committed_hashes": 59010000000000,
+          "pass": true
+        },
+        {
+          "task_polls": 61,
+          "jitter_ms": 1,
+          "rate_ghs": 0,
+          "elapsed_ms": 60000,
+          "pending_ms": 999,
+          "observed_hashes": 0,
+          "expected_committed_hashes": 0,
+          "pass": true
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/bitaxeorg/ESP-Miner",
+  "development_original": "bb4fd0c7e589858bbeef00ec89342216c1510671",
+  "release_original": "d212a0f948cb3ffd90c7ca9572e9b2cf2d865d80",
+  "release_tag": "v2.15.4",
+  "introduction": "98ed491d56dc0ac59e223e582d74226e3e77b37a",
+  "candidate": "development_original plus lifetime-counter.patch",
+  "scope": "local lifetime counter elapsed-time conservation",
+  "hardware_observed": false
+}
