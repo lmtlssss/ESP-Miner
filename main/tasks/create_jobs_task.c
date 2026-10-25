@@ -16,7 +16,13 @@
 
 static const char *TAG = "create_jobs_task";
 
-static bool generate_work_from_miner_job(GlobalState *GLOBAL_STATE, const miner_job_t *job, uint64_t extranonce_2, uint32_t current_version, uint32_t *dispatch_epoch)
+typedef struct {
+    bool valid;
+    uint32_t epoch;
+    uint32_t version_mask;
+} asic_version_mask_cache_t;
+
+static bool generate_work_from_miner_job(GlobalState *GLOBAL_STATE, const miner_job_t *job, uint64_t extranonce_2, uint32_t current_version, uint32_t *dispatch_epoch, asic_version_mask_cache_t *mask_cache)
 {
     if (!job) return false;
 
@@ -34,9 +40,15 @@ static bool generate_work_from_miner_job(GlobalState *GLOBAL_STATE, const miner_
         return false;
     }
     *dispatch_epoch = __atomic_load_n(&GLOBAL_STATE->ASIC_work_epoch, __ATOMIC_ACQUIRE);
-    // ASIC recovery restores driver defaults. Program this owned job's mask
-    // before every send so zero masks and post-recovery jobs cannot use it.
-    ASIC_set_version_mask(GLOBAL_STATE, job->version_mask);
+    // Programming the mask sends a UART command. Cache it for this ASIC epoch.
+    // Initialization advances the epoch, including recovery after a reset.
+    if (!mask_cache->valid || mask_cache->epoch != *dispatch_epoch ||
+        mask_cache->version_mask != job->version_mask) {
+        ASIC_set_version_mask(GLOBAL_STATE, job->version_mask);
+        mask_cache->version_mask = job->version_mask;
+        mask_cache->epoch = *dispatch_epoch;
+        mask_cache->valid = true;
+    }
     ASIC_send_job(GLOBAL_STATE, &next_job);
     return true;
 }
@@ -51,6 +63,7 @@ void create_jobs_task(void *pvParameters)
     miner_job_t *current_work = NULL;
     bool current_work_sent = false;
     uint32_t sent_work_epoch = 0;
+    asic_version_mask_cache_t mask_cache = {0};
     uint64_t extranonce_2 = 0;
     uint32_t current_version = 0;
     int timeout_ms = ASIC_get_asic_job_frequency_ms(GLOBAL_STATE);
@@ -97,7 +110,7 @@ void create_jobs_task(void *pvParameters)
         }
 
         uint32_t dispatch_epoch;
-        if (!generate_work_from_miner_job(GLOBAL_STATE, current_work, extranonce_2, current_version, &dispatch_epoch)) {
+        if (!generate_work_from_miner_job(GLOBAL_STATE, current_work, extranonce_2, current_version, &dispatch_epoch, &mask_cache)) {
             timeout_ms = ASIC_get_asic_job_frequency_ms(GLOBAL_STATE);
             continue;
         }
