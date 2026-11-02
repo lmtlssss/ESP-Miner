@@ -55,5 +55,9 @@
     "tailwindcss": "^4.3.2",
     "typescript": "^5.5.4",
     "webpack-bundle-analyzer": "^4.10.2"
+  },
+  "overrides": {
+    "piscina": "^4.9.4",
+    "tar": "^7.5.21"
   }
 }
